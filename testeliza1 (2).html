@@ -88,7 +88,7 @@ ThunkableWebviewerExtension.receiveMessage(function(message) {
 	
     function say(message) { // 當送出鍵按下時，會呼叫這個函數進行回答動作
 	document.getElementById("say").value = message;
-      append(message);//將輸入的問句放到「對話區」顯示。
+       append(document.getElementById("say").value); // 先將使用者輸入的問句放到「對話區」顯示。
       answer(); // 然後回答使用者的問題。
     }
     
@@ -106,6 +106,8 @@ ThunkableWebviewerExtension.receiveMessage(function(message) {
     function answer() { // 回答問題
 	
 	var ans = getAnswer();
+	
+	ThunkableWebviewerExtension.postMessage(r);
 	
       setTimeout(function () { // 停頓 1 到 3 秒再回答問題 (因為若回答太快就不像人了，人打字需要時間)
         append(">> "+ans);
