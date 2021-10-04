@@ -74,7 +74,7 @@ var qaList = [
 	
 	
 	
-    function random(n) { // 從 0 到 n-1 中選一個亂數
+    function random否 { // 從 0 到 n-1 中選一個亂數
       return Math.floor(Math.random()*n);
     }
     
@@ -110,10 +110,10 @@ ThunkableWebviewerExtension.receiveMessage(function(message) {
 	ThunkableWebviewerExtension.postMessage(r);
 	
       setTimeout(function () { // 停頓 1 到 3 秒再回答問題 (因為若回答太快就不像人了，人打字需要時間)
-        append(">> "+ans);
+        append(">> "+r);
       }, 1000+random(2000));
 	  
-	  ThunkableWebviewerExtension.postMessage(ans);
+	    
     }
     
     function getAnswer() {
